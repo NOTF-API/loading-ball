@@ -25,7 +25,7 @@ const ball2 = new LoadingBall({
 // 其他配置项
 const ball3 = new LoadingBall({
     target:document.querySelector(".target")
-    width: 100, // 1到100，必须是整数
+    width: 100, // 正数数字
     fontSize: 20, // 正数数字
     // #FFFEEE 或 rgb(...) 或 rgba(...)
     backgroundColor: "#eaf7ff", 
@@ -34,6 +34,7 @@ const ball3 = new LoadingBall({
 });
 // 更多定制效果需要手动修改LoadingBall.css
 
+// 进度值 应在0 ~ 100 且为整数
 ball1.to(5); // 进度变化到5%
 ball2.to(50); // 进度变化到50%
 ball3.to(100); // 进度变化到100%
