@@ -1,0 +1,71 @@
+html,
+body {
+  height: 100%;
+}
+:root {
+  font-size: 20px;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading-ball {
+  user-select: none;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  position: relative;
+  background-color: #eaf7ff;
+  overflow: hidden;
+}
+.background-text {
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 2rem;
+  transform: translate(-50%, -50%);
+  color: #1f232c;
+}
+.background-text::before {
+  content: attr(rate);
+}
+@keyframes waving {
+  0% {
+    -webkit-mask-position-x: 100%;
+  }
+  100% {
+    -webkit-mask-position-x: 0%;
+  }
+}
+.mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  -webkit-mask-image: url(wave.svg);
+  -webkit-mask-size: 200% 200%;
+  -webkit-mask-repeat: repeat-x;
+  transition: all 0.5s ease;
+  animation: waving 1s linear infinite;
+}
+.mask .foreground-text {
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 2rem;
+  color: #fff;
+  z-index: 100;
+}
+.mask .wave {
+  transition: height 0.5s ease;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(#87e7f2, #2198f6);
+}
