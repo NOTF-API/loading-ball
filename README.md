@@ -27,7 +27,7 @@ const ball2 = new LoadingBall({
 // other config
 const ball3 = new LoadingBall({
     target:document.querySelector(".target")
-    width: 100, // 1-100 integer number
+    width: 100, // number
     fontSize: 20, // number
     // #FFFEEE or rgb(...) or rgba(...)
     backgroundColor: "#eaf7ff", 
@@ -36,6 +36,7 @@ const ball3 = new LoadingBall({
 });
 // if you want to cofig more,just edit LoadingBall.css yourself
 
+// progress should be in [0,100]
 ball1.to(5); // goto 5%
 ball2.to(50); // goto 50%
 ball3.to(100); // goto 100%
